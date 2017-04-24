@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="110dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/image_bus_poi"
+        android:layout_width="@dimen/button_dimen"
+        android:layout_height="@dimen/button_dimen"
+        tools:background="@drawable/trolleybus_blue"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/text_line_bus_poi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_blue"
+        android:textSize="25dp"
+        tools:text=" 3 "
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/image_bus_poi"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/text_line_bus_hour_poi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        tools:text="@string/time_3"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@id/text_line_bus_poi"
+        android:layout_marginEnd="44dp" />
+
+</RelativeLayout>

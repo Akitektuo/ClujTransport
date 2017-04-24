@@ -1,0 +1,78 @@
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        applicationId "com.akitektuo.clujtransport"
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    maven {
+        url "http://developer.skobbler.com/maven/"
+    }
+}
+
+configurations {
+    skobblersdk
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    skobblersdk "com.skobbler.ngx:SKMaps:2.5.1"
+    compile files('libs/SKMaps.jar')
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'it.sephiroth.android.library.horizontallistview:hlistview:1.2.2'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+}
+
+def assetsPath = "$projectDir/src/main/assets"
+def libsPath = "$projectDir/libs"
+def jniLibsPath = "$projectDir/src/main/jniLibs"
+
+task installSKMaps << {
+    copy {
+        from configurations.skobblersdk
+        into "$buildDir/skobblersdk-down"
+        rename { String fileName -> 'skobblersdkres.zip' }
+    }
+    copy {
+        from zipTree("$buildDir/skobblersdk-down/skobblersdkres.zip")
+        into "$buildDir/skobblersdk-down"
+    }
+    delete("$jniLibsPath",
+            "$assetsPath/SKMaps.zip",
+            "$libsPath/SKMaps.jar")
+    copy {
+        from "${buildDir}/skobblersdk-down/jniLibs"
+        into "$jniLibsPath"
+    }
+    copy {
+        from "${buildDir}/skobblersdk-down/SKMaps.zip"
+        into "$assetsPath"
+    }
+    copy {
+        from "${buildDir}/skobblersdk-down/SKMaps.jar"
+        into "$libsPath"
+    }
+    delete("$buildDir/skobblersdk-down")
+    delete(configurations.skobblersdk)
+}

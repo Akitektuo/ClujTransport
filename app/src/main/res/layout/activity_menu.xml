@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.akitektuo.clujtransport.activity.MenuActivity">
+
+    <ImageView
+        android:id="@+id/image_search_background_menu"
+        android:layout_width="match_parent"
+        android:background="@drawable/bar_blue"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/button_dimen"
+        android:layout_marginBottom="@dimen/buttons_space"
+        />
+
+    <AutoCompleteTextView
+        android:id="@+id/edit_text_menu_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:layout_toEndOf="@+id/button_menu_back"
+        android:layout_toStartOf="@+id/button_menu_search"
+        android:textColorHint="@android:color/darker_gray"
+        android:layout_alignBottom="@+id/button_menu_search"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/button_menu_back"
+        android:layout_width="@dimen/button_dimen"
+        android:layout_height="@dimen/button_dimen"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/back_white"
+        android:clickable="true" />
+
+    <Button
+        android:id="@+id/button_menu_search"
+        android:layout_width="@dimen/button_dimen"
+        android:layout_height="@dimen/button_dimen"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/search_white"
+        android:clickable="true" />
+
+    <Button
+        android:id="@+id/button_menu_bus"
+        android:layout_below="@id/image_search_background_menu"
+        android:background="@android:color/transparent"
+        android:text="@string/bus_station"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_map"
+        android:textAlignment="textStart"
+        />
+
+    <ImageView
+        android:layout_width="@dimen/button_dimen"
+        android:layout_height="@dimen/button_dimen"
+        android:background="@drawable/bus_blue"
+        android:layout_gravity="right"
+        android:id="@+id/imageView"
+        android:layout_alignTop="@+id/button_menu_bus"
+        android:layout_toStartOf="@+id/imageView2" />
+
+    <ImageView
+        android:layout_width="@dimen/button_dimen"
+        android:layout_height="@dimen/button_dimen"
+        android:background="@drawable/trolleybus_blue"
+        android:id="@+id/imageView2"
+        android:layout_alignTop="@+id/button_menu_bus"
+        android:layout_toStartOf="@+id/imageView3" />
+
+    <ImageView
+        android:layout_width="@dimen/button_dimen"
+        android:layout_height="@dimen/button_dimen"
+        android:background="@drawable/tram_blue"
+        android:layout_alignTop="@+id/button_menu_bus"
+        android:layout_alignStart="@+id/button_menu_search"
+        android:id="@+id/imageView3" />
+
+    <ImageView
+        android:id="@+id/image_after_bus"
+        android:layout_below="@id/button_menu_bus"
+        android:background="@drawable/bar_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/buttons_space"
+        android:layout_marginBottom="@dimen/buttons_space"/>
+
+    <Button
+        android:id="@+id/button_menu_ticket"
+        android:layout_below="@id/image_after_bus"
+        android:background="@android:color/transparent"
+        android:text="@string/tickets"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_map"
+        android:textAlignment="textStart"/>
+
+    <ImageView
+        android:layout_width="@dimen/button_dimen"
+        android:layout_height="@dimen/button_dimen"
+        android:background="@drawable/ticket_info_blue"
+        android:layout_above="@+id/image_after_ticket"
+        android:layout_toEndOf="@+id/imageView2"
+        android:id="@+id/imageView4" />
+
+    <ImageView
+        android:id="@+id/image_after_ticket"
+        android:layout_below="@id/button_menu_ticket"
+        android:background="@drawable/bar_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/buttons_space"
+        android:layout_marginBottom="@dimen/buttons_space"/>
+
+    <Button
+        android:id="@+id/button_settings"
+        android:layout_below="@id/image_after_ticket"
+        android:background="@android:color/transparent"
+        android:text="@string/settings"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_map"
+        android:textAlignment="textStart"/>
+
+    <ImageView
+        android:layout_width="@dimen/button_dimen"
+        android:layout_height="@dimen/button_dimen"
+        android:background="@drawable/settings_blue"
+        android:layout_alignTop="@+id/button_settings"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/image_after_settings"
+        android:layout_below="@id/button_settings"
+        android:background="@drawable/bar_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/buttons_space"
+        android:layout_marginBottom="@dimen/buttons_space"/>
+
+    <Button
+        android:id="@+id/button_help"
+        android:layout_below="@id/image_after_settings"
+        android:background="@android:color/transparent"
+        android:text="@string/help"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_map"
+        android:textAlignment="textStart"/>
+
+    <ImageView
+        android:layout_width="@dimen/button_dimen"
+        android:layout_height="@dimen/button_dimen"
+        android:background="@drawable/help_blue"
+        android:layout_alignTop="@+id/button_help"
+        android:layout_alignStart="@+id/imageView4" />
+
+    <ImageView
+        android:id="@+id/image_after_help"
+        android:layout_below="@id/button_help"
+        android:background="@drawable/bar_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/buttons_space"
+        android:layout_marginBottom="@dimen/buttons_space"/>
+
+    <ImageView
+        android:id="@+id/image_menu_error"
+        android:layout_width="@dimen/button_dimen"
+        android:layout_height="@dimen/button_dimen"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/error_blue"
+        android:visibility="gone"
+        android:layout_below="@id/image_after_help"/>
+
+    <TextView
+        android:id="@+id/text_menu_explanation"
+        android:layout_below="@id/image_menu_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="20dp"/>
+
+    <ImageView
+        android:id="@+id/image_after_explanation"
+        android:layout_below="@id/text_menu_explanation"
+        android:background="@drawable/bar_blue"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/buttons_space"
+        android:layout_marginBottom="@dimen/buttons_space"/>
+    
+    <Button
+        android:id="@+id/button_menu_ok"
+        android:layout_below="@id/image_after_explanation"
+        android:layout_width="@dimen/button_dimen"
+        android:layout_height="@dimen/button_dimen"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ok_blue"
+        android:visibility="gone" />
+</RelativeLayout>

@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:padding="@dimen/padding_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:background="@drawable/border_blue"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content">
+
+            <Switch
+                android:id="@+id/switch_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/text_settings_station"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/station_settings"
+                android:textColor="@color/blue"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_with_20"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/switch_settings" />
+
+            <TextView
+                android:id="@+id/text_settings_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/line_settings"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_with_20"
+                android:layout_toEndOf="@id/switch_settings"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_settings_station"
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_stations"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_with_20" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bar_blue"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/station"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_station"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/blue"
+                android:hint="@string/station"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/road"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_road"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/blue"
+                android:hint="@string/road"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/lon"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_long"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/blue"
+                android:hint="@string/lon"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/lat"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_lat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/blue"
+                android:hint="@string/lat"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/lines_database"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_lines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/lines"
+                android:textColorHint="@color/blue"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/tickets_database"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_tickets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tickets"
+                android:textColorHint="@color/blue"/>
+
+            <Button
+                android:id="@+id/button_save_station"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_blue"
+                android:text="@string/save_info"
+                android:textColor="@color/blue"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/see_database"
+                android:textSize="@dimen/text_with_20"
+                android:textColor="@color/blue"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bar_blue"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/button_show_station"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_blue"
+                android:textColor="@color/blue"
+                android:text="@string/see_all_stations"/>
+
+            <TextView
+                android:id="@+id/text_station_database_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/delete_database"
+                android:textSize="@dimen/text_with_20"
+                android:textColor="@color/blue"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bar_blue"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/station_search_delete"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/edit_text_delete_station"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/station"
+                android:textColorHint="@color/blue"/>
+
+            <Button
+                android:id="@+id/button_remove_station"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_blue"
+                android:text="@string/delete_station"
+                android:textColor="@color/blue"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blue"
+                android:text="@string/update_database"
+                android:textSize="@dimen/text_with_20"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bar_blue"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/station_search_update"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/edit_text_update_station"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/station"
+                android:textColorHint="@color/blue"/>
+
+            <Button
+                android:id="@+id/button_update_station"
+                android:layout_width="match_parent"
+                android:background="@drawable/border_blue"
+                android:textColor="@color/blue"
+                android:text="@string/show_station_info"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edit_text_update_database_station"
+                android:hint="@string/station"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/blue"/>
+
+            <EditText
+                android:id="@+id/edit_text_update_database_road"
+                android:hint="@string/road"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColorHint="@color/blue"/>
+
+            <EditText
+                android:id="@+id/edit_text_update_database_long"
+                android:hint="@string/lon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColorHint="@color/blue"/>
+
+            <EditText
+                android:id="@+id/edit_text_update_database_lat"
+                android:hint="@string/lat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColorHint="@color/blue"/>
+
+            <EditText
+                android:id="@+id/edit_text_update_database_lines"
+                android:hint="@string/lines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColorHint="@color/blue"/>
+
+            <EditText
+                android:id="@+id/edit_text_update_database_tickets"
+                android:hint="@string/tickets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColorHint="@color/blue"/>
+
+            <Button
+                android:id="@+id/button_save_changes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:background="@drawable/border_blue"
+                android:text="@string/save_changes"
+                android:textColor="@color/blue"/>
+
+            <Button
+                android:id="@+id/button_cancel_update"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_blue"
+                android:textColor="@color/blue"
+                android:text="@string/cancel"/>
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bar_blue"/>
+
+            <RelativeLayout
+                android:id="@+id/layout_database_sync_station"
+                android:background="@color/blue"
+                android:layout_width="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button_database_sync_station"
+                    android:layout_width="match_parent"
+                    android:background="@android:color/transparent"
+                    android:text="@string/sync"
+                    android:textAlignment="textStart"
+                    android:textColor="@android:color/white"
+                    android:textAllCaps="false"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/image_sync_station"
+                    android:background="@drawable/sync_white"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_settings_line"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_lines"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_with_20" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bar_blue"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/line"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/blue"
+                android:hint="@string/line"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/type_database"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/blue"
+                android:hint="@string/type"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/time_database"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/blue"
+                android:hint="@string/time"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/stations_database"/>
+
+            <EditText
+                android:id="@+id/edit_text_add_stations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/blue"
+                android:hint="@string/stations"/>
+
+            <Button
+                android:id="@+id/button_save_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_blue"
+                android:text="@string/save_info_line"
+                android:textColor="@color/blue"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/see_database"
+                android:textSize="@dimen/text_with_20"
+                android:textColor="@color/blue"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bar_blue"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/button_show_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_blue"
+                android:textColor="@color/blue"
+                android:text="@string/see_all_lines"/>
+
+            <TextView
+                android:id="@+id/text_line_database_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/delete_database_line"
+                android:textSize="@dimen/text_with_20"
+                android:textColor="@color/blue"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bar_blue"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/line_search_delete"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/edit_text_delete_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/line"
+                android:textColorHint="@color/blue"/>
+
+            <Button
+                android:id="@+id/button_remove_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_blue"
+                android:text="@string/delete_line"
+                android:textColor="@color/blue"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blue"
+                android:text="@string/update_database_line"
+                android:textSize="@dimen/text_with_20"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bar_blue"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/line_search_update"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/edit_text_update_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/line"
+                android:textColorHint="@color/blue"/>
+
+            <Button
+                android:id="@+id/button_update_line"
+                android:layout_width="match_parent"
+                android:background="@drawable/border_blue"
+                android:textColor="@color/blue"
+                android:text="@string/show_line_info"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edit_text_update_database_line"
+                android:hint="@string/line"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/blue"/>
+
+            <EditText
+                android:id="@+id/edit_text_update_database_type"
+                android:hint="@string/type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColorHint="@color/blue"/>
+
+            <EditText
+                android:id="@+id/edit_text_update_database_time"
+                android:hint="@string/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColorHint="@color/blue"/>
+
+            <EditText
+                android:id="@+id/edit_text_update_database_stations"
+                android:hint="@string/stations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColorHint="@color/blue"/>
+
+            <Button
+                android:id="@+id/button_save_changes_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:background="@drawable/border_blue"
+                android:text="@string/save_changes"
+                android:textColor="@color/blue"/>
+
+            <Button
+                android:id="@+id/button_cancel_update_line"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_blue"
+                android:textColor="@color/blue"
+                android:text="@string/cancel"/>
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bar_blue"/>
+
+            <RelativeLayout
+                android:id="@+id/layout_database_sync_line"
+                android:background="@color/blue"
+                android:layout_width="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button_database_sync_line"
+                    android:layout_width="match_parent"
+                    android:background="@android:color/transparent"
+                    android:text="@string/sync"
+                    android:textAlignment="textStart"
+                    android:textColor="@android:color/white"
+                    android:textAllCaps="false"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/image_sync_line"
+                    android:background="@drawable/sync_white"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
